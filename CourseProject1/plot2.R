@@ -26,8 +26,9 @@ data_feb <- data[data$Date >= ymd("2007-02-01") & data$Date <= ymd("2007-02-02")
 data_feb$Date <- data_feb$Date + hms(data_feb$Time)
 data_feb <- data_feb[,-c(2)]
 
-# Draw the histogram
+# Draw the lines
 
-png(filename = "plot1.png", width = 480, height = 480, units = "px", pointsize = 12, bg = "white")
-hist(as.numeric(as.character(data_feb$Global_active_power)), col = "red", breaks = 12, main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
+png(filename = "plot2.png", width = 480, height = 480, units = "px", pointsize = 12, bg = "white")
+plot(data_feb$Date,data_feb$Global_active_power,type="n",ylab="Global Active Power (kilowatts)",xlab="")
+lines(data_feb$Date,data_feb$Global_active_power)
 dev.off()
