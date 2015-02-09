@@ -28,6 +28,6 @@ data_feb <- data_feb[,-c(2)]
 
 # Draw the histogram
 
-png(filename = "plot1.png", width = 480, height = 480, units = "px", pointsize = 12, bg = "white")
+png(filename = "plot1.png", width = 480, height = 480, units = "px", pointsize = 12, bg = "white",type="cairo")
 hist(as.numeric(as.character(data_feb$Global_active_power)), col = "red", breaks = 12, main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
 dev.off()

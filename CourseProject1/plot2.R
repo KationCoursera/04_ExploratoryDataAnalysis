@@ -28,7 +28,7 @@ data_feb <- data_feb[,-c(2)]
 
 # Draw the lines
 
-png(filename = "plot2.png", width = 480, height = 480, units = "px", pointsize = 12, bg = "white")
+png(filename = "plot2.png", width = 480, height = 480, units = "px", pointsize = 12, bg = "white",type="cairo")
 plot(data_feb$Date,data_feb$Global_active_power,type="n",ylab="Global Active Power (kilowatts)",xlab="")
 lines(data_feb$Date,data_feb$Global_active_power)
 dev.off()
